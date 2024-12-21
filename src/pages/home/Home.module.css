@@ -1,0 +1,218 @@
+:root {
+  --primary-color: #59a7fa;
+  --secondary-color: #f9f9f9;
+  --text-color: #333;
+  --hover-bg-color: #d6ecff;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  width: 100%;
+  max-width: 80vh;
+  margin: 0px auto;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  padding: 12px;
+  gap: 16px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.title,
+.SearchBar,
+.TempFilter {
+  margin-bottom: 20px;
+}
+
+.gridContainer {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  padding: 5px 2px;
+  max-height: 50vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cityCard {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  height: auto;
+}
+
+.cityCard:hover {
+  transform: scale(1.02);
+}
+
+.removeButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #f89698;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.removeButton:focus,
+.removeButton:active {
+  border: none;
+  outline: none;
+}
+
+.removeButton:hover {
+  color: #d11a2a;
+}
+
+.cityContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  text-align: center;
+  height: 8vh;
+  gap: 8px;
+}
+.cityLeft {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.cityRight {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.gridContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+.gridContainer::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 4px;
+}
+
+.gridContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #96b6d8;
+}
+
+.gridContainer li {
+  background-color: var(--secondary-color);
+  padding: 12px;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, background-color 0.2s;
+  font-size: 1.2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.gridContainer li:hover {
+  background-color: var(--hover-bg-color);
+  transform: scale(1.005);
+}
+
+.gridContainer li:nth-child(odd) {
+  background-color: #eef7ff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gridContainer li {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .SearchBar,
+  .TempFilter {
+    width: 100%;
+  }
+  .gridContainer {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .gridContainer li {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    max-width: 400px;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  .SearchBar,
+  .TempFilter {
+    width: 100%;
+  }
+
+  .gridContainer {
+    gap: 10px;
+  }
+
+  .gridContainer li {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

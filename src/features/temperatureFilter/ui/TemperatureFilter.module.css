@@ -1,0 +1,45 @@
+.tempFilterContainer {
+  padding: 10px 12px;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.tempFilterLabel {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.tempSlider {
+  width: 100%;
+  margin-top: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  border-radius: 5px;
+  outline: none;
+}
+
+.tempSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tempSlider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #007bff;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
